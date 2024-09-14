@@ -2,7 +2,6 @@ from dataclasses import dataclass
 
 
 @dataclass
-class InputConverter:
+class InputTypeConverter:
     typeInput: str
     typeOutput: str
-    pathFile: str
