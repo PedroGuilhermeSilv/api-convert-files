@@ -1,6 +1,3 @@
-# Instale a biblioteca SQLite3
-apt-get update
-apt-get install -y libsqlite3-dev
 
 
 # Build the project
