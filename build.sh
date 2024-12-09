@@ -1,3 +1,8 @@
+# Instale a biblioteca SQLite3
+apt-get update
+apt-get install -y libsqlite3-dev
+
+
 # Build the project
 echo "Building the project..."
 python3.12 -m pip install -r requirements.txt
