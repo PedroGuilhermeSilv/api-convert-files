@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:4fdfcceafed451b93411f974b0ff05a71ab51de72842a1beaa5ddb618c4c6aee"
+content_hash = "sha256:4a2894fa619d86dce82f641762295a069fb627d71c05deefd852d1019d8ee39b"
 
 [[metadata.targets]]
 requires_python = "==3.11.*"
@@ -36,6 +36,39 @@ dependencies = [
 files = [
     {file = "asgiref-3.8.1-py3-none-any.whl", hash = "sha256:3e1e3ecc849832fe52ccf2cb6686b7a55f82bb1d6aee72a58826471390335e47"},
     {file = "asgiref-3.8.1.tar.gz", hash = "sha256:c343bd80a0bec947a9860adb4c432ffa7db769836c64238fc34bdc3fec84d590"},
+]
+
+[[package]]
+name = "boto3"
+version = "1.35.77"
+requires_python = ">=3.8"
+summary = "The AWS SDK for Python"
+groups = ["default"]
+dependencies = [
+    "botocore<1.36.0,>=1.35.77",
+    "jmespath<2.0.0,>=0.7.1",
+    "s3transfer<0.11.0,>=0.10.0",
+]
+files = [
+    {file = "boto3-1.35.77-py3-none-any.whl", hash = "sha256:a09871805f8e462349a1c33c23eb413668df0bf68424e61d53518e1a7d883b2f"},
+    {file = "boto3-1.35.77.tar.gz", hash = "sha256:cc819cdbccbc2d0dc185f1dcfe74cf3809489c4cae63c2e5d6a557aa0c5ab928"},
+]
+
+[[package]]
+name = "botocore"
+version = "1.35.77"
+requires_python = ">=3.8"
+summary = "Low-level, data-driven core of boto 3."
+groups = ["default"]
+dependencies = [
+    "jmespath<2.0.0,>=0.7.1",
+    "python-dateutil<3.0.0,>=2.1",
+    "urllib3!=2.2.0,<3,>=1.25.4; python_version >= \"3.10\"",
+    "urllib3<1.27,>=1.25.4; python_version < \"3.10\"",
+]
+files = [
+    {file = "botocore-1.35.77-py3-none-any.whl", hash = "sha256:3faa27d65841499762228902d7e215fa99a4c2fdc76c9113e1c3f339bdf685b8"},
+    {file = "botocore-1.35.77.tar.gz", hash = "sha256:17b778016644e9342ca3ff2f430c1d1db0c6126e9b41a57cff52ac58e7a455e0"},
 ]
 
 [[package]]
@@ -78,6 +111,17 @@ groups = ["default"]
 files = [
     {file = "et_xmlfile-1.1.0-py3-none-any.whl", hash = "sha256:a2ba85d1d6a74ef63837eed693bcb89c3f752169b0e3e7ae5b16ca5e1b3deada"},
     {file = "et_xmlfile-1.1.0.tar.gz", hash = "sha256:8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"},
+]
+
+[[package]]
+name = "jmespath"
+version = "1.0.1"
+requires_python = ">=3.7"
+summary = "JSON Matching Expressions"
+groups = ["default"]
+files = [
+    {file = "jmespath-1.0.1-py3-none-any.whl", hash = "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980"},
+    {file = "jmespath-1.0.1.tar.gz", hash = "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"},
 ]
 
 [[package]]
@@ -239,6 +283,17 @@ files = [
 ]
 
 [[package]]
+name = "python-dotenv"
+version = "1.0.1"
+requires_python = ">=3.8"
+summary = "Read key-value pairs from a .env file and set them as environment variables"
+groups = ["default"]
+files = [
+    {file = "python-dotenv-1.0.1.tar.gz", hash = "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca"},
+    {file = "python_dotenv-1.0.1-py3-none-any.whl", hash = "sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a"},
+]
+
+[[package]]
 name = "pytz"
 version = "2024.2"
 summary = "World timezone definitions, modern and historical"
@@ -246,6 +301,20 @@ groups = ["default"]
 files = [
     {file = "pytz-2024.2-py2.py3-none-any.whl", hash = "sha256:31c7c1817eb7fae7ca4b8c7ee50c72f93aa2dd863de768e1ef4245d426aa0725"},
     {file = "pytz-2024.2.tar.gz", hash = "sha256:2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"},
+]
+
+[[package]]
+name = "s3transfer"
+version = "0.10.4"
+requires_python = ">=3.8"
+summary = "An Amazon S3 Transfer Manager"
+groups = ["default"]
+dependencies = [
+    "botocore<2.0a.0,>=1.33.2",
+]
+files = [
+    {file = "s3transfer-0.10.4-py3-none-any.whl", hash = "sha256:244a76a24355363a68164241438de1b72f8781664920260c48465896b712a41e"},
+    {file = "s3transfer-0.10.4.tar.gz", hash = "sha256:29edc09801743c21eb5ecbc617a152df41d3c287f67b615f73e5f750583666a7"},
 ]
 
 [[package]]
@@ -290,6 +359,18 @@ groups = ["default"]
 files = [
     {file = "tzdata-2024.1-py2.py3-none-any.whl", hash = "sha256:9068bc196136463f5245e51efda838afa15aaeca9903f49050dfa2679db4d252"},
     {file = "tzdata-2024.1.tar.gz", hash = "sha256:2674120f8d891909751c38abcdfd386ac0a5a1127954fbc332af6b5ceae07efd"},
+]
+
+[[package]]
+name = "urllib3"
+version = "2.2.3"
+requires_python = ">=3.8"
+summary = "HTTP library with thread-safe connection pooling, file post, and more."
+groups = ["default"]
+marker = "python_version >= \"3.10\""
+files = [
+    {file = "urllib3-2.2.3-py3-none-any.whl", hash = "sha256:ca899ca043dcb1bafa3e262d73aa25c465bfb49e0bd9dd5d59f1d0acba2f8fac"},
+    {file = "urllib3-2.2.3.tar.gz", hash = "sha256:e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"},
 ]
 
 [[package]]

@@ -1,8 +1,9 @@
 from dataclasses import dataclass
+from typing import Any
 
 
 @dataclass
 class InputConverter:
     typeInput: str
     typeOutput: str
-    pathFile: str
+    file: Any

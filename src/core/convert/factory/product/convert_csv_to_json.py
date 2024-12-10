@@ -10,6 +10,7 @@ from src.core.convert.factory.product.interface.abstract_converter import Conver
 class ConvertCsvToJson(Converter):
     def convert(self, path_file: FilePath) -> OutputConvert:
         try:
+            
             name_file = os.path.splitext(os.path.basename(path_file))[0]
             csv_data_df = pd.read_csv(path_file, encoding='utf-8-sig' )             
         
