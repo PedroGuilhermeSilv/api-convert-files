@@ -9,7 +9,7 @@ from src.core.convert.service.dto.input import InputConverter
 from src.infra.convert.routers.dto.enum import TypeInput, TypeOutput
 from src.infra.convert.routers.dto.output import OutputControllerConvert
 from src.infra.convert.routers.execeptions.handlers import service_unavailable
-
+from django.http import FileResponse
 api = NinjaAPI()
 
 
@@ -19,7 +19,7 @@ def convert(
     typeInput: TypeInput,
     typeOutput: TypeOutput,
     file: UploadedFile = File(...),
-) -> OutputControllerConvert:
+) -> FileResponse:
     try:
         manager_factory = ManufacturingDynamicConverters()
         service = ConverterService(manager_factory)
@@ -36,4 +36,4 @@ def convert(
     except Exception as e:
         raise e
 
-    return OutputControllerConvert(path=response.pathFile)
+    return FileResponse(filename=response.fileName, as_attachment=True)
