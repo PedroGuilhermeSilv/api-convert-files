@@ -1,5 +1,4 @@
 import boto3
-import pandas as pd
 from django.conf import settings
 
 from src.core.convert.factory.product.dto.output import OutputConvert
@@ -18,10 +17,7 @@ class ConvertXlsxToCsv(Converter):
                 endpoint_url=settings.ENDPOINT_URL,
             )
 
-            excel_data_df = pd.read_excel(file)
-
             output_name_file = f"{file.name}.csv".replace(".xlsx", "")
-            excel_data_df.to_csv(output_name_file, index=False, encoding="utf-8-sig")
 
             s3.Bucket("convert-files").put_object(
                 Key=output_name_file, Body=file.file, ACL="public-read"
