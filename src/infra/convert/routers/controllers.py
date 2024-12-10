@@ -36,4 +36,6 @@ def convert(
     except Exception as e:
         raise e
 
-    return FileResponse(filename=response.fileName, as_attachment=True)
+    response = FileResponse(open(response.fileName, 'rb'), as_attachment=True)
+    response['Content-Disposition'] = f'attachment; filename="{response.fileName}"; link="{response.fileName}"'
+    return response
