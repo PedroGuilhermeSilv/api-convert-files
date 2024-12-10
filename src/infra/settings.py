@@ -86,7 +86,7 @@ WSGI_APPLICATION = "src.infra.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "",
+        "NAME": tmpPostgres.path.replace("/", ""),
         "USER": tmpPostgres.username,
         "PASSWORD": tmpPostgres.password,
         "HOST": tmpPostgres.hostname,
